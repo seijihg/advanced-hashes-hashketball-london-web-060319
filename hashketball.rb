@@ -166,3 +166,17 @@ def shoe_size(name)
 
     empty_hash[:shoe]
 end
+
+def team_colors(team)
+    empty_arr = []
+    game_hash.each do |k,v|
+        if v.has_value?(team)
+            v.each do |k1, v1|
+                if k1 == :colors
+                    empty_arr.push(v1)
+                end
+            end
+        end
+    end
+    empty_arr[0]
+end
