@@ -214,3 +214,19 @@ def player_numbers(team_name)
 
     empty_arr
 end
+
+def player_stats(name)
+    empty_hash = {}
+    game_hash.each do |k, v|
+        v.each do |k1, v1|
+            if v1.is_a?(Hash)
+                v1.each do |k2, v2|
+                    if k2 == name
+                        empty_hash[k2] = v2
+                    end
+                end
+            end
+        end
+    end
+    empty_hash[name]
+end
