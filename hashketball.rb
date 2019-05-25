@@ -180,3 +180,15 @@ def team_colors(team)
     end
     empty_arr[0]
 end
+
+def team_names
+    empty_arr = []
+    game_hash.each do |k, v|
+        v.each do |k1, v1|
+            if k1 == :team_name
+                empty_arr.push(v1)
+            end
+        end
+    end
+    empty_arr
+end
