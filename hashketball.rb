@@ -230,3 +230,22 @@ def player_stats(name)
     end
     empty_hash[name]
 end
+
+def big_shoe_rebounds
+    empty_arr = []
+
+    game_hash.each do |k, v|
+        v.each do |k1, v1|
+            if v1.is_a?(Hash)
+                v1.each do |k2, v2|
+                    v2.each do |k3, v3|
+                        if k3 == :rebounds
+                            empty_arr.push(v3)
+                        end
+                    end
+                end
+            end
+        end
+    end
+    empty_arr.max
+end
