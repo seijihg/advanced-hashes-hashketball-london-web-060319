@@ -264,3 +264,23 @@ def big_shoe_rebounds
     end
     empty_hash.key(empty_hash.values.max)
 end
+
+def big_shoe_rebounds
+    array_rebounds = []
+    array_shoe = []
+
+    game_hash.each do |k, v|
+        v.each do |k1, v1|
+            if v1.is_a?(Hash)
+                v1.each do |k2, v2|
+                    array_rebounds.push(v2[:rebounds])
+                    array_shoe.push(v2[:shoe])
+                end
+            end
+        end
+    end
+
+    shoe_value = array_rebounds.rindex(array_rebounds.max)
+
+    array_shoe[shoe_value]
+end
