@@ -249,3 +249,18 @@ def big_shoe_rebounds
     end
     empty_arr.max
 end
+
+def big_shoe_rebounds
+    empty_hash = {}
+
+    game_hash.each do |k, v|
+        v.each do |k1, v1|
+            if v1.is_a?(Hash)
+                v1.each do |k2, v2|
+                     empty_hash[v2[:rebounds]] = v2[:shoe]
+                end
+            end
+        end
+    end
+    empty_hash.key(empty_hash.values.max)
+end
