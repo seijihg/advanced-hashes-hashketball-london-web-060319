@@ -192,3 +192,25 @@ def team_names
     end
     empty_arr
 end
+
+def player_numbers(team_name)
+    empty_arr = []
+
+    game_hash.each do |k, v|
+        if v.has_value?(team_name)
+            v.each do |k1, v1|
+                if v1.is_a?(Hash)
+                    v1.each do |k2, v2|
+                        v2.each do |k3, v3|
+                            if k3 == :number
+                                empty_arr.push(v3)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
+    empty_arr
+end
