@@ -282,7 +282,7 @@ def big_shoe_rebounds
 
     i = array_shoe.rindex(array_shoe.max)
 
-    array_shoe[i]
+    array_rebounds[i]
 
 
 end
